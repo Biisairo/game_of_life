@@ -2,9 +2,9 @@ syntax = "proto3";
 
 package lexicon;
 
-import "common/common.proto";
+option go_package = "github.com/Biisairo/game_of_life/proto/lexicon;lexicon";
 
-option go_package = "b415/gameoflife;lexicon";
+import "common/common.proto";
 
 service lexicon {
 	rpc SaveRecord(SaveRecordRequest) returns (common.Empty);

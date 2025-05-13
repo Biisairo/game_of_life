@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package common;
 
-option go_package = "b415/gameoflife;common";
+option go_package = "github.com/Biisairo/game_of_life/proto/common;common";
 
 message Empty {}
 

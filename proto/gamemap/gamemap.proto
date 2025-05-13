@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-package map;
+package gamemap;
+
+option go_package = "github.com/Biisairo/game_of_life/proto/gamemap;gamemap";
 
 import "common/common.proto";
 
-option go_package = "b415/gameoflife;map";
-
-service map {
+service gamemap {
 	// sync
 	rpc SyncCheck(SyncCheckRequest) returns (SyncCheckResponse);
-	rpc SyncMap(common.Empty) returns (SyncMapResponse);
+	rpc SyncGameMap(common.Empty) returns (SyncGameMapResponse);
 
 	// send new pattern
 	rpc NewPattern(NewPatternRequest) returns (common.Empty);
@@ -27,7 +27,7 @@ message SyncCheckResponse {
 	bool synchronized = 1;
 }
 
-message SyncMapResponse {
+message SyncGameMapResponse {
 	int64 counter = 1;
 	repeated common.Cell map = 2;
 }
