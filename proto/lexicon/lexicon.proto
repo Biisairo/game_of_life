@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package lexicon;
+
+import "common/common.proto";
+
+option go_package = "b415/gameoflife;lexicon";
+
+service lexicon {
+	rpc SaveRecord(SaveRecordRequest) returns (common.Empty);
+	rpc GetLexicon(common.Empty) returns (GetLexiconResponse);
+}
+
+message Record {
+	repeated common.Cell pattern = 1;
+}
+
+message SaveRecordRequest {
+	int32 userId = 1;
+}
+
+message GetLexiconResponse {
+	int32 userId = 1;
+}

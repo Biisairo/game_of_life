@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package map;
+
+import "common/common.proto";
+
+option go_package = "b415/gameoflife;map";
+
+service map {
+	// sync
+	rpc SyncCheck(SyncCheckRequest) returns (SyncCheckResponse);
+	rpc SyncMap(common.Empty) returns (SyncMapResponse);
+
+	// send new pattern
+	rpc NewPattern(NewPatternRequest) returns (common.Empty);
+	
+	// stream
+	rpc StreamMap(common.Empty) returns (stream StreamMapResponse);
+}
+
+message SyncCheckRequest {
+	int64 counter = 1;
+	string hashedMap = 2;
+}
+
+message SyncCheckResponse {
+	bool synchronized = 1;
+}
+
+message SyncMapResponse {
+	int64 counter = 1;
+	repeated common.Cell map = 2;
+}
+
+message NewPatternRequest {
+	int64 counter = 1;
+	repeated common.Cell map = 2;
+}
+
+message StreamMapResponse {
+	int64 counter = 1;
+	repeated common.Cell map = 2;
+}
