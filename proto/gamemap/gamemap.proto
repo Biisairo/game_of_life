@@ -32,10 +32,10 @@ message SyncGameMapResponse {
 
 message NewPatternRequest {
 	int64 counter = 1;
-	repeated common.Cell map = 2;
+	repeated common.Cell pattern = 2;
 }
 
 message StreamMapResponse {
 	int64 counter = 1;
-	repeated common.Cell map = 2;
+	repeated common.Cell pattern = 2;
 }
