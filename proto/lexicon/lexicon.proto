@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package lexicon;
 
-option go_package = "github.com/Biisairo/game_of_life/proto/lexicon;lexicon";
-
 import "common/common.proto";
 
 service lexicon {

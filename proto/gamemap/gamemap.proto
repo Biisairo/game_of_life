@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package gamemap;
 
-option go_package = "github.com/Biisairo/game_of_life/proto/gamemap;gamemap";
-
 import "common/common.proto";
 
 service gamemap {
