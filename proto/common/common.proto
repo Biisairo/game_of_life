@@ -7,6 +7,5 @@ message Empty {}
 message Cell {
 	int64 x = 1;
 	int64 y = 2;
-	bool isLive = 3; // is live now
-	bool justLive = 4; // just live before
+	bool isLive = 3;
 }
